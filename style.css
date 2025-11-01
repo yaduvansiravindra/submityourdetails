@@ -5,7 +5,7 @@ html, body {
   background-color: #5a5656;
   overflow: hidden;
   color: rgb(26, 189, 37);
-  background-image: url("assets/light.png");
+  background-image: url("light.png");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -171,3 +171,4 @@ textarea.error {
       margin-top: 10px;
       text-align: center;
     }
+
