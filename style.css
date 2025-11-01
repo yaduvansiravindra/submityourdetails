@@ -1,0 +1,173 @@
+html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5a5656;
+  overflow: hidden;
+  color: rgb(26, 189, 37);
+  background-image: url("assets/light.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid rgb(252, 60, 22);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  text-align: center;
+  width: 350px;
+  height: auto;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(252, 60, 22, 0.5);
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+input {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.message {
+  margin-bottom: 20px;
+  color: #48FF00;
+}
+
+/* Glowing Button */
+.button {
+  margin-top: 25px;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  background: #111;
+  font-size: 16px;
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.button::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:active:after {
+  background: transparent;
+}
+
+.button:active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* 🔹 Responsive Design 🔹 */
+@media (max-width: 768px) {
+  .form {
+    width: 80%;
+    padding: 25px 15px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+
+  .form {
+    width: 90%;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  input {
+    font-size: 13px;
+  }
+
+  .button {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+}
+.error-msg {
+      color: rgb(200, 120, 220);
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: left;
+    }
+input.error,
+textarea.error {
+  border:2px solid #FF0000;         /* Red border */
+  background-color: #FFE5E5;         /* Light red background */
+}
+    .success-msg {
+      color: limegreen;
+      font-size: 16px;
+      margin-top: 10px;
+      text-align: center;
+    }
